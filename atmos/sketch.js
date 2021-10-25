@@ -2,6 +2,7 @@
 let theShader;
 let shaderBg;
 let skyGrad;
+let canvas;
 
 function preload(){
   // load the shader
@@ -10,8 +11,8 @@ function preload(){
 
 function setup() {
   // shaders require WEBGL mode to work
-  createCanvas(windowWidth, windowHeight, WEBGL);
-  
+  canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+
   // initialize the createGraphics layers
   shaderBg = createGraphics(windowWidth, windowHeight, WEBGL);
   
@@ -19,6 +20,15 @@ function setup() {
   shaderBg.noStroke();
   
   skyGrad = [1,1,1];
+}
+
+function mousePressed() {
+	fs = fullscreen() ;
+	fullscreen(!fs);
+}
+
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
