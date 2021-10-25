@@ -133,8 +133,6 @@ void main() {
   vec4 r6 = ColorLerp(st.y, 0.7, 1.0, c6, c7, r1.w+r2.w+r3.w+r4.w+r5.w);
   vec4 skyColor = vec4(r1.xyz*r1.w + r2.xyz*r2.w + r3.xyz*r3.w + r4.xyz*r4.w + r5.xyz*r5.w + r6.xyz*r6.w, 1.0);
 
-  vec2 _t = gl_FragCoord.xy + vec2(u_time * 30.0, u_time * 30.0) * vec2(cos(u_time*0.2), sin(u_time*0.2));
-  float n = noise(_t);
   vec2 t = gl_FragCoord.xy + vec2(u_time*30.1, 0);
   //float ns = clamp(abs(noise(t)) * pow(st.y, 2.0) * 0.1, 0.0, 0.1);
   float ns = abs(noise(t));

@@ -82,7 +82,7 @@ function draw_sky()
 	push();
 
 	// 空の時間経過処理
-	let time = millis() *0.005;
+	let time = millis() *0.001;
 	let morning = createVector(0.79, 0.9, 1.0);
 	let afternoon = createVector(0.9, 1.0, 1.1);
 	let evening = createVector(1.1,0.9,0.9);
